@@ -51,5 +51,14 @@ class Questions: NSObject, NSCoding {
     }
 
     
+    func setupQuestions() {
+        
+    }
+    
+    func answer() {
+        
+    }
+    
+    
     
 }

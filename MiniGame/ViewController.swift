@@ -9,21 +9,25 @@
 import UIKit
 import CoreMotion
 
+enum gameStatus {
+    case menu
+    case tutorial
+    case game
+    case drop
+    case showScore
+    case end
+}
+
 class ViewController: UIViewController {
 
     let manager = CMMotionManager()
+    
     var status = 0   // 0: pass, 1: update question, 2: correct
-    // 
-    //var questions = [String]()
-    //var questions: Array<String> = ["As","Bs","Cs","Ds","Es","F","G","H","I","J","As","Bs","Cs","Ds","Es","Fs","Gs","Hs","Is","Js","As","Bs","Cs","Ds","Es","Fs","Gs","Hs","Is","Js"]
-    //var questions: [String]!
     var questions: Array<String>!
     var questionIndex = 0
     var tempQ = ""
-    
-    var knownAnswer = [Int]()
-    
     var correctCount = 0
+    
     var timer = NSTimer()
     var second = 0
     var timeCountDown = 90
@@ -52,7 +56,6 @@ class ViewController: UIViewController {
                 manager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) {
                     [weak self] (data: CMDeviceMotion?, error: NSError?) in
                     
-                    //print"\(data!.attitude.pitch) -- \(data!.attitude.yaw) --\(data!.attitude.roll)"
                     
                     currentRoll = data!.attitude.roll
                     if currentRoll > -1.8  && currentRoll < -1.0 {
@@ -61,7 +64,6 @@ class ViewController: UIViewController {
                             self!.status = 1
                         }
                     }else if currentRoll > -1.0 {
-                        
                         if self!.status != 0 {
                             self!.answer("pass")
                             self!.lbQuestion.text = "PASS"
@@ -74,21 +76,9 @@ class ViewController: UIViewController {
                             self!.status = 2
                         }
                     }
-                    
                 }
             }
-            
-            
-            /*
-            // open device listening
-            UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
-            
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedRotation",
-                name: UIDeviceOrientationDidChangeNotification, object: nil)
-            */
-
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,44 +89,16 @@ class ViewController: UIViewController {
     
 // game process
     func setupGame() {
-        /*
-        knownAnswer = []
-        for p in knownAnswer {
-            print("\(p)")
-        }
-        */
         second = timeCountDown
         lbTime.text = "Time: \(second) "
         correctCount = 0
-        
     }
     
+    // start game and time countdown
     func startGame() {
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("subtractTime"), userInfo: nil, repeats: true)
         updateQuestion()
     }
-    
-    /*
-    func receivedRotation(){
-        let device = UIDevice.currentDevice()
-        switch device.orientation{
-        case .Portrait:
-            lbTest.text = "面向设备保持垂直，Home键位于下部"
-        case .PortraitUpsideDown:
-            lbTest.text = "面向设备保持垂直，Home键位于上部"
-        case .LandscapeLeft:
-            lbTest.text = "面向设备保持水平，Home键位于左侧"
-        case .LandscapeRight:
-            lbTest.text = "面向设备保持水平，Home键位于右侧"
-        case .FaceUp:
-            answer("pass")
-        case .FaceDown:
-            answer("correct")
-        default:
-            break
-        }
-    }
- */
     
     func subtractTime() {
         second -= 1
@@ -149,6 +111,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // stop game
     func stopGame() {
         timer.invalidate()
         UIDevice.currentDevice().endGeneratingDeviceOrientationNotifications()
@@ -166,21 +129,10 @@ class ViewController: UIViewController {
             
         }
         }
-        //questionIndex++
-        //updateQuestion()
     }
     
     func updateQuestion() {
         if questionIndex < questions.count {
-            /*
-            //temp fix for empty value
-            while questions[questionIndex] == "" {
-                print("question is empty")
-                questionIndex++
-            }
-
-            lbQuestion.text = questions[questionIndex]
-            */
             tempQ = questions.removeFirst()
             lbQuestion.text = tempQ
             
@@ -189,11 +141,6 @@ class ViewController: UIViewController {
             stopGame()
         }
     }
-    
-    // if the question is known, move it out from questions list.
-    func addToCorrectAnswer(){
-        knownAnswer.append(questionIndex)
-        //questions[questionIndex] = "known"
-    }
+
 }
 

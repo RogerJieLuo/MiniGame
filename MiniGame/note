@@ -1,3 +1,21 @@
+Browse to the project path where the .xcodeproj file is.
+Execute the following from your command line:
+    git init
+    git add .
+    git commit -m 'Initial commit from local git'
+    git remote add origin git@github.com:ACCOUNT/PROJECT.git
+    git pull origin master
+    (VIM editor opens)
+    Hit 'i' to add a comment, for example 'Initial merge to sync local git with remote git'.
+    Hit 'ESC'.
+    Hit 'ZZ'.
+    (VIM editor closes)
+    git push origin master
+
+
+
+
+
 //感知设备方向 - 开启监听设备方向
 UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
 //添加通知，监听设备方向改变
