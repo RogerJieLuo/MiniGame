@@ -10,7 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
-    var score = 0
+    var score: Int!
     
     @IBOutlet weak var lbScore: UILabel!
     @IBOutlet weak var lbTest: UILabel!
@@ -19,25 +19,13 @@ class MenuViewController: UIViewController {
     //var questions = [String]()
     var questions = Array<String>()
     //var questionLibrary = Questions
-    var knownQuestion = [String]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"background_1.jpg")!)
-        
-        if let savedQuestion = loadQuestion()  {
-            if savedQuestion.count > 0 {
-                //print(savedQuestion)
-                questions = savedQuestion
-            }else{
-                loadQuestionLibrary()
-            }
-        }else{
-            // First time open the game, Load the sample data.
-            loadQuestionLibrary()
-        }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,9 +34,8 @@ class MenuViewController: UIViewController {
     }
     
     // MARK: manipulate question library
-    
     func loadQuestionLibrary(){
-        let path = NSBundle.mainBundle().pathForResource("questions", ofType: "txt")
+        let path = NSBundle.mainBundle().pathForResource("Word_test", ofType: "txt")
         var contents: String
         
         do {
@@ -60,39 +47,21 @@ class MenuViewController: UIViewController {
         
     }
     
-    // there should be a better way to faster it
-    // or directly delete the words from file
-    func updateQuestionLibrary(var i: Int){
-        
-        // delete the words already be known
-        while(i<questions.count){
-            if questions[i] == "" {
-                questions.removeAtIndex(i)
-                updateQuestionLibrary(i)
-            }else{
-                i += 1
-            }
-        }
-
-        saveQuestion()
-        
-    }
     
     @IBAction func unwindToMenuList(sender: UIStoryboardSegue) {
-        let sourceViewController = sender.sourceViewController as? ViewController
-        score = sourceViewController!.correctCount
+       /*
+        //if let sourceViewController = sender.sourceViewController as? GWViewController {
+        let sourceViewController = sender.sourceViewController as? GWViewController
+            if score == sourceViewController!.score {
+                lbScore.text = "Score: \(score)"
+            } else {
+                lbScore.text = "No Score Return"
+            }
+        //}else {
+            //lbScore.text = "No source"
+        //}
+*/
         lbScore.text = "Score: \(score)"
-        /*
-        let arr = sourceViewController!.knownAnswer
-        for q in arr {
-            //lbTest.text = lbTest.text! + " \(q)"
-            print("a \(q) -- \(questions.count)")
-            questions[q] = ""
-        }
-        */
-        questions = sourceViewController!.questions
-        //updateQuestionLibrary(0)
-        saveQuestion()
     }
 
     
@@ -105,8 +74,10 @@ class MenuViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "playGame" {
+            /*
             let game: ViewController = segue.destinationViewController as! ViewController
             game.questions = self.questions
+ */
         }
     }
     

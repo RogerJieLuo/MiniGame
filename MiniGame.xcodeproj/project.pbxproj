@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5A72A071CB71BF7004E14A3 /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A001CB71BF7004E14A3 /* coin.wav */; };
+		D5A72A081CB71BF7004E14A3 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A011CB71BF7004E14A3 /* ding.wav */; };
+		D5A72A091CB71BF7004E14A3 /* falling.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A021CB71BF7004E14A3 /* falling.wav */; };
+		D5A72A0A1CB71BF7004E14A3 /* flapping.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A031CB71BF7004E14A3 /* flapping.wav */; };
+		D5A72A0B1CB71BF7004E14A3 /* hitGround.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A041CB71BF7004E14A3 /* hitGround.wav */; };
+		D5A72A0C1CB71BF7004E14A3 /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A051CB71BF7004E14A3 /* pop.wav */; };
+		D5A72A0D1CB71BF7004E14A3 /* whack.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A061CB71BF7004E14A3 /* whack.wav */; };
 		D5AEBEDD1CAF082000F2C423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBEDC1CAF082000F2C423 /* AppDelegate.swift */; };
-		D5AEBEDF1CAF082000F2C423 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBEDE1CAF082000F2C423 /* ViewController.swift */; };
+		D5AEBEDF1CAF082000F2C423 /* GWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBEDE1CAF082000F2C423 /* GWViewController.swift */; };
 		D5AEBEE21CAF082000F2C423 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AEBEE01CAF082000F2C423 /* Main.storyboard */; };
 		D5AEBEE41CAF082000F2C423 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5AEBEE31CAF082000F2C423 /* Assets.xcassets */; };
 		D5AEBEE71CAF082000F2C423 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AEBEE51CAF082000F2C423 /* LaunchScreen.storyboard */; };
@@ -43,9 +50,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D5A72A001CB71BF7004E14A3 /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
+		D5A72A011CB71BF7004E14A3 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
+		D5A72A021CB71BF7004E14A3 /* falling.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = falling.wav; sourceTree = "<group>"; };
+		D5A72A031CB71BF7004E14A3 /* flapping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flapping.wav; sourceTree = "<group>"; };
+		D5A72A041CB71BF7004E14A3 /* hitGround.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitGround.wav; sourceTree = "<group>"; };
+		D5A72A051CB71BF7004E14A3 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
+		D5A72A061CB71BF7004E14A3 /* whack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whack.wav; sourceTree = "<group>"; };
 		D5AEBED91CAF082000F2C423 /* MiniGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5AEBEDC1CAF082000F2C423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5AEBEDE1CAF082000F2C423 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D5AEBEDE1CAF082000F2C423 /* GWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GWViewController.swift; sourceTree = "<group>"; };
 		D5AEBEE11CAF082000F2C423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5AEBEE31CAF082000F2C423 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5AEBEE61CAF082000F2C423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,6 +106,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D5A729FF1CB71BF7004E14A3 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D5A72A001CB71BF7004E14A3 /* coin.wav */,
+				D5A72A011CB71BF7004E14A3 /* ding.wav */,
+				D5A72A021CB71BF7004E14A3 /* falling.wav */,
+				D5A72A031CB71BF7004E14A3 /* flapping.wav */,
+				D5A72A041CB71BF7004E14A3 /* hitGround.wav */,
+				D5A72A051CB71BF7004E14A3 /* pop.wav */,
+				D5A72A061CB71BF7004E14A3 /* whack.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		D5AEBED01CAF082000F2C423 = {
 			isa = PBXGroup;
 			children = (
@@ -115,17 +143,16 @@
 		D5AEBEDB1CAF082000F2C423 /* MiniGame */ = {
 			isa = PBXGroup;
 			children = (
-				D5AEBF221CB09EFD00F2C423 /* FlashMemoryViewController.swift */,
+				D5A729FF1CB71BF7004E14A3 /* Sounds */,
 				D5AEBF211CB09ED500F2C423 /* FlashMemory */,
 				D5AEBF201CB09EC400F2C423 /* GuessWord */,
 				D5AEBEDC1CAF082000F2C423 /* AppDelegate.swift */,
-				D5AEBEDE1CAF082000F2C423 /* ViewController.swift */,
+				D5AEBEDE1CAF082000F2C423 /* GWViewController.swift */,
 				D5AEBF281CB1DD4A00F2C423 /* questionLibrary */,
 				D5AEBF141CB0122400F2C423 /* Words.txt */,
 				D5AEBF1C1CB055E900F2C423 /* questions.txt */,
 				D5AEBF161CB0172B00F2C423 /* Word_test.txt */,
 				D5AEBEE01CAF082000F2C423 /* Main.storyboard */,
-				D5AEBF241CB09F5900F2C423 /* FlashMemoryMenuViewController.swift */,
 				D5AEBF1E1CB0967B00F2C423 /* GameListViewController.swift */,
 				D5AEBF121CAF6EF200F2C423 /* note */,
 				D5AEBF101CAF48BF00F2C423 /* MenuViewController.swift */,
@@ -165,6 +192,8 @@
 		D5AEBF211CB09ED500F2C423 /* FlashMemory */ = {
 			isa = PBXGroup;
 			children = (
+				D5AEBF221CB09EFD00F2C423 /* FlashMemoryViewController.swift */,
+				D5AEBF241CB09F5900F2C423 /* FlashMemoryMenuViewController.swift */,
 			);
 			name = FlashMemory;
 			sourceTree = "<group>";
@@ -283,9 +312,16 @@
 			files = (
 				D5AEBEE71CAF082000F2C423 /* LaunchScreen.storyboard in Resources */,
 				D5AEBEE41CAF082000F2C423 /* Assets.xcassets in Resources */,
+				D5A72A091CB71BF7004E14A3 /* falling.wav in Resources */,
 				D5AEBF171CB0172B00F2C423 /* Word_test.txt in Resources */,
 				D5AEBF131CAF6EF200F2C423 /* note in Resources */,
+				D5A72A0D1CB71BF7004E14A3 /* whack.wav in Resources */,
 				D5AEBF151CB0122400F2C423 /* Words.txt in Resources */,
+				D5A72A0A1CB71BF7004E14A3 /* flapping.wav in Resources */,
+				D5A72A071CB71BF7004E14A3 /* coin.wav in Resources */,
+				D5A72A0C1CB71BF7004E14A3 /* pop.wav in Resources */,
+				D5A72A081CB71BF7004E14A3 /* ding.wav in Resources */,
+				D5A72A0B1CB71BF7004E14A3 /* hitGround.wav in Resources */,
 				D5AEBF1D1CB055E900F2C423 /* questions.txt in Resources */,
 				D5AEBEE21CAF082000F2C423 /* Main.storyboard in Resources */,
 			);
@@ -313,7 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5AEBF231CB09EFE00F2C423 /* FlashMemoryViewController.swift in Sources */,
-				D5AEBEDF1CAF082000F2C423 /* ViewController.swift in Sources */,
+				D5AEBEDF1CAF082000F2C423 /* GWViewController.swift in Sources */,
 				D5AEBF111CAF48BF00F2C423 /* MenuViewController.swift in Sources */,
 				D5AEBF271CB0ADEA00F2C423 /* Questions.swift in Sources */,
 				D5AEBF1F1CB0967B00F2C423 /* GameListViewController.swift in Sources */,
