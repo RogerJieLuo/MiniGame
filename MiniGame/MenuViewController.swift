@@ -62,6 +62,13 @@ class MenuViewController: UIViewController {
         //}
 */
         lbScore.text = "Score: \(score)"
+        
+        if let sourceViewController = sender.sourceViewController as? GWViewController {
+            questions = sourceViewController.questions
+            sourceViewController.manager.stopDeviceMotionUpdates()
+        }
+        
+        saveQuestion()
     }
 
     
@@ -80,6 +87,7 @@ class MenuViewController: UIViewController {
  */
         }
     }
+
     
     // MARK: NSCoding
     func saveQuestion() {

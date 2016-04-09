@@ -14,6 +14,7 @@
 		D5A72A0B1CB71BF7004E14A3 /* hitGround.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A041CB71BF7004E14A3 /* hitGround.wav */; };
 		D5A72A0C1CB71BF7004E14A3 /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A051CB71BF7004E14A3 /* pop.wav */; };
 		D5A72A0D1CB71BF7004E14A3 /* whack.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A061CB71BF7004E14A3 /* whack.wav */; };
+		D5A72A131CB72E89004E14A3 /* FMCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A72A121CB72E89004E14A3 /* FMCollectionViewCell.swift */; };
 		D5AEBEDD1CAF082000F2C423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBEDC1CAF082000F2C423 /* AppDelegate.swift */; };
 		D5AEBEDF1CAF082000F2C423 /* GWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBEDE1CAF082000F2C423 /* GWViewController.swift */; };
 		D5AEBEE21CAF082000F2C423 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AEBEE01CAF082000F2C423 /* Main.storyboard */; };
@@ -27,8 +28,8 @@
 		D5AEBF171CB0172B00F2C423 /* Word_test.txt in Resources */ = {isa = PBXBuildFile; fileRef = D5AEBF161CB0172B00F2C423 /* Word_test.txt */; };
 		D5AEBF1D1CB055E900F2C423 /* questions.txt in Resources */ = {isa = PBXBuildFile; fileRef = D5AEBF1C1CB055E900F2C423 /* questions.txt */; };
 		D5AEBF1F1CB0967B00F2C423 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBF1E1CB0967B00F2C423 /* GameListViewController.swift */; };
-		D5AEBF231CB09EFE00F2C423 /* FlashMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBF221CB09EFD00F2C423 /* FlashMemoryViewController.swift */; };
-		D5AEBF251CB09F5900F2C423 /* FlashMemoryMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBF241CB09F5900F2C423 /* FlashMemoryMenuViewController.swift */; };
+		D5AEBF231CB09EFE00F2C423 /* FMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBF221CB09EFD00F2C423 /* FMViewController.swift */; };
+		D5AEBF251CB09F5900F2C423 /* FMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBF241CB09F5900F2C423 /* FMMenuViewController.swift */; };
 		D5AEBF271CB0ADEA00F2C423 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBF261CB0ADEA00F2C423 /* Questions.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		D5A72A041CB71BF7004E14A3 /* hitGround.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitGround.wav; sourceTree = "<group>"; };
 		D5A72A051CB71BF7004E14A3 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		D5A72A061CB71BF7004E14A3 /* whack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whack.wav; sourceTree = "<group>"; };
+		D5A72A121CB72E89004E14A3 /* FMCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCollectionViewCell.swift; sourceTree = "<group>"; };
 		D5AEBED91CAF082000F2C423 /* MiniGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5AEBEDC1CAF082000F2C423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5AEBEDE1CAF082000F2C423 /* GWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GWViewController.swift; sourceTree = "<group>"; };
@@ -76,8 +78,8 @@
 		D5AEBF161CB0172B00F2C423 /* Word_test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Word_test.txt; sourceTree = "<group>"; };
 		D5AEBF1C1CB055E900F2C423 /* questions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = questions.txt; sourceTree = "<group>"; };
 		D5AEBF1E1CB0967B00F2C423 /* GameListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
-		D5AEBF221CB09EFD00F2C423 /* FlashMemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashMemoryViewController.swift; sourceTree = "<group>"; };
-		D5AEBF241CB09F5900F2C423 /* FlashMemoryMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashMemoryMenuViewController.swift; sourceTree = "<group>"; };
+		D5AEBF221CB09EFD00F2C423 /* FMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMViewController.swift; sourceTree = "<group>"; };
+		D5AEBF241CB09F5900F2C423 /* FMMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMMenuViewController.swift; sourceTree = "<group>"; };
 		D5AEBF261CB0ADEA00F2C423 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,8 +194,9 @@
 		D5AEBF211CB09ED500F2C423 /* FlashMemory */ = {
 			isa = PBXGroup;
 			children = (
-				D5AEBF221CB09EFD00F2C423 /* FlashMemoryViewController.swift */,
-				D5AEBF241CB09F5900F2C423 /* FlashMemoryMenuViewController.swift */,
+				D5AEBF221CB09EFD00F2C423 /* FMViewController.swift */,
+				D5AEBF241CB09F5900F2C423 /* FMMenuViewController.swift */,
+				D5A72A121CB72E89004E14A3 /* FMCollectionViewCell.swift */,
 			);
 			name = FlashMemory;
 			sourceTree = "<group>";
@@ -348,13 +351,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5AEBF231CB09EFE00F2C423 /* FlashMemoryViewController.swift in Sources */,
+				D5AEBF231CB09EFE00F2C423 /* FMViewController.swift in Sources */,
 				D5AEBEDF1CAF082000F2C423 /* GWViewController.swift in Sources */,
 				D5AEBF111CAF48BF00F2C423 /* MenuViewController.swift in Sources */,
 				D5AEBF271CB0ADEA00F2C423 /* Questions.swift in Sources */,
+				D5A72A131CB72E89004E14A3 /* FMCollectionViewCell.swift in Sources */,
 				D5AEBF1F1CB0967B00F2C423 /* GameListViewController.swift in Sources */,
 				D5AEBEDD1CAF082000F2C423 /* AppDelegate.swift in Sources */,
-				D5AEBF251CB09F5900F2C423 /* FlashMemoryMenuViewController.swift in Sources */,
+				D5AEBF251CB09F5900F2C423 /* FMMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

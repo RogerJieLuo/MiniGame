@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlashMemoryMenuViewController: UIViewController {
+class FMMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

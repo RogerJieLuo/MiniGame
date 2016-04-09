@@ -42,7 +42,11 @@ class GWViewController: UIViewController {
     
     var timer = NSTimer()
     var second = 0
-    var timeCountDown = 5
+    var timeCountDown = 300
+    
+    // motion 
+    let upTilt = -0.6
+    let downTilt = -1.8
     
     @IBOutlet weak var lbQuestion: UILabel!
     @IBOutlet weak var lbTime: UILabel!
@@ -55,7 +59,7 @@ class GWViewController: UIViewController {
         UIApplication.sharedApplication().idleTimerDisabled = true
         
         setupGame()
-        lbTest.text = "\(questions)"
+        //lbTest.text = "\(questions)"
         if questions.count == 0{
             print("no item")
         }else{
@@ -70,13 +74,13 @@ class GWViewController: UIViewController {
                     [weak self] (data: CMDeviceMotion?, error: NSError?) in
                     if self != nil {
                     currentRoll = data!.attitude.roll
-                    if currentRoll > -1.8  && currentRoll < -1.0 {
+                    if currentRoll > self!.downTilt  && currentRoll < self!.upTilt {
                         // when the device was "stand up vertically and in landscape mode"
                         if self!.status != 1 {
                             self!.updateQuestion()
                             self!.status = 1
                         }
-                    }else if currentRoll > -1.0 {
+                    }else if currentRoll > self!.upTilt {
                         // when device roll forward a little bit
                         if self!.status != 3 {
                             self!.answer("pass")
@@ -93,12 +97,20 @@ class GWViewController: UIViewController {
                     }
                     
                     if self!.questions.count == 0 {
-                        self!.manager.stopGyroUpdates()
+                        //self!.manager.stopGyroUpdates()
                     }
                     }
                 }
             }
+            
+            
+            
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"exitGame", name:UIApplicationWillTerminateNotification, object:nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"inactivative", name:UIApplicationWillResignActiveNotification, object:nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -128,7 +140,7 @@ class GWViewController: UIViewController {
         
         if second == 0 {
             stopGame()
-            print("correctCount \(correctCount)")
+            //print("correctCount \(correctCount)")
             self.performSegueWithIdentifier("unwindToMenu", sender: self)
         }
     }
@@ -137,12 +149,11 @@ class GWViewController: UIViewController {
     func stopGame() {
         timer.invalidate()
         //manager.stopGyroUpdates()
-        print("stop game")
-        
-        if questions.count != 0 {
+        //print("\(questions.count)")
+        manager.stopDeviceMotionUpdates()
+        if questions.count > 0 {
             tempQ = questions.removeFirst()
             questions.append(tempQ)
-            //questions.append(tempQ)
         }
         saveQuestion()  // stores questions to permanent data
     }
@@ -202,6 +213,7 @@ class GWViewController: UIViewController {
         // load questions
         // if there are stored questions, use stored questions
         // if not, reload the questions file
+        
         if let savedQuestion = loadQuestion()  {
             if savedQuestion.count > 0 {
                 questions = savedQuestion
@@ -211,11 +223,12 @@ class GWViewController: UIViewController {
         }else{
             loadQuestionLibrary()
         }
-        
+ 
+        //loadQuestionLibrary()
     }
     
     func loadQuestionLibrary(){
-        let path = NSBundle.mainBundle().pathForResource("Word_test", ofType: "txt")
+        let path = NSBundle.mainBundle().pathForResource("questions", ofType: "txt")
         var contents: String
         
         do {
@@ -230,10 +243,10 @@ class GWViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "unwindToMenu") {
-            print("unwind")
+            //print("unwind")
             //get a reference to the destination view controller
             let destinationVC: MenuViewController = segue.destinationViewController as! MenuViewController
-            print("correct num is: \(correctCount)")
+            //print("correct num is: \(correctCount)")
             //set properties on the destination view controller
             destinationVC.score = correctCount
             //etc...
@@ -257,6 +270,15 @@ class GWViewController: UIViewController {
         //return NSKeyedUnarchiver.unarchiveObjectWithFile("questionLibrary/questionsLibrary") as? [String]
     }
     
+    func exitGame() {
+        stopGame()
+        saveQuestion()
+    }
+    
+    func inactivative() {
+        stopGame()
+        self.performSegueWithIdentifier("unwindToMenu", sender: self)
+    }
 
 
 }

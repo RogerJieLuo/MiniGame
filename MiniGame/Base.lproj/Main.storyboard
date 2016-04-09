@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -128,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="432" y="-40"/>
         </scene>
-        <!--Flash Memory Menu View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="wAt-7V-rm6">
             <objects>
-                <viewController id="UFI-9f-GGG" customClass="FlashMemoryMenuViewController" customModule="MiniGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UFI-9f-GGG" customClass="FMMenuViewController" customModule="MiniGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9DF-pQ-bbs"/>
                         <viewControllerLayoutGuide type="bottom" id="36b-Uh-DkL"/>
@@ -144,7 +145,7 @@
                                 <rect key="frame" x="243" y="66" width="114" height="47"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="HZa-mI-Asj" kind="show" identifier="playFlashMemory" id="RWJ-wc-vHk"/>
+                                    <segue destination="HZa-mI-Asj" kind="show" identifier="playFlashMemory" id="lUH-L8-6Vn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95X-10-23E">
@@ -163,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="432" y="617"/>
         </scene>
-        <!--Flash Memory View Controller-->
+        <!--View Controller-->
         <scene sceneID="20j-Rq-tSb">
             <objects>
-                <viewController id="HZa-mI-Asj" customClass="FlashMemoryViewController" customModule="MiniGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HZa-mI-Asj" customClass="FMViewController" customModule="MiniGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tKT-Zb-n0C"/>
                         <viewControllerLayoutGuide type="bottom" id="VaI-7K-oj2"/>
@@ -177,33 +178,50 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7zY-ff-IjK">
                                 <rect key="frame" x="20" y="20" width="560" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7zY-ff-IjK" secondAttribute="height" multiplier="7:6" id="ujA-58-Qjc"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CAP-t0-4R3">
-                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="itemSize" width="60" height="60"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZYk-B1-p2s">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FMCell" id="ZYk-B1-p2s" customClass="FMCollectionViewCell" customModule="MiniGame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUK-Xb-BkL">
+                                                    <rect key="frame" x="8" y="8" width="45" height="45"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <outlet property="lbNumber" destination="dUK-Xb-BkL" id="KPD-dz-bWA"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7zY-ff-IjK" firstAttribute="top" secondItem="tKT-Zb-n0C" secondAttribute="bottom" id="3ox-aY-2S3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7zY-ff-IjK" secondAttribute="trailing" id="Duu-tE-Cm7"/>
-                            <constraint firstItem="7zY-ff-IjK" firstAttribute="leading" secondItem="0VJ-vj-r7T" secondAttribute="leadingMargin" id="atT-MG-Zow"/>
-                            <constraint firstItem="VaI-7K-oj2" firstAttribute="top" secondItem="7zY-ff-IjK" secondAttribute="bottom" constant="100" id="eNG-D6-ncY"/>
+                            <constraint firstItem="7zY-ff-IjK" firstAttribute="top" secondItem="tKT-Zb-n0C" secondAttribute="bottom" id="DKG-xb-k36"/>
+                            <constraint firstItem="VaI-7K-oj2" firstAttribute="top" secondItem="7zY-ff-IjK" secondAttribute="bottom" constant="100" id="GvG-bJ-Rgz"/>
+                            <constraint firstItem="7zY-ff-IjK" firstAttribute="leading" secondItem="0VJ-vj-r7T" secondAttribute="leadingMargin" id="Q1R-Js-Ph9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionview" destination="7zY-ff-IjK" id="ux3-KQ-SW2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVN-jI-ddF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,7 +272,7 @@
                                     <segue destination="Tgr-Uu-1i2" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenuList:" id="m6j-bC-IIv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nw-ML-INs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nw-ML-INs">
                                 <rect key="frame" x="20" y="479" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
