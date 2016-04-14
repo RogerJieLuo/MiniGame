@@ -15,6 +15,10 @@
 		D5A72A0C1CB71BF7004E14A3 /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A051CB71BF7004E14A3 /* pop.wav */; };
 		D5A72A0D1CB71BF7004E14A3 /* whack.wav in Resources */ = {isa = PBXBuildFile; fileRef = D5A72A061CB71BF7004E14A3 /* whack.wav */; };
 		D5A72A131CB72E89004E14A3 /* FMCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A72A121CB72E89004E14A3 /* FMCollectionViewCell.swift */; };
+		D5A72A151CB9C03B004E14A3 /* FMNumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A72A141CB9C03B004E14A3 /* FMNumberCollectionViewCell.swift */; };
+		D5A72A1A1CB9F24E004E14A3 /* FMTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A72A191CB9F24E004E14A3 /* FMTwoViewController.swift */; };
+		D5A72A1C1CB9F701004E14A3 /* FMTwoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A72A1B1CB9F701004E14A3 /* FMTwoMenuViewController.swift */; };
+		D5A72A1E1CB9F7D5004E14A3 /* FMTwoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A72A1D1CB9F7D5004E14A3 /* FMTwoCollectionViewCell.swift */; };
 		D5AEBEDD1CAF082000F2C423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBEDC1CAF082000F2C423 /* AppDelegate.swift */; };
 		D5AEBEDF1CAF082000F2C423 /* GWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AEBEDE1CAF082000F2C423 /* GWViewController.swift */; };
 		D5AEBEE21CAF082000F2C423 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AEBEE01CAF082000F2C423 /* Main.storyboard */; };
@@ -59,6 +63,10 @@
 		D5A72A051CB71BF7004E14A3 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		D5A72A061CB71BF7004E14A3 /* whack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whack.wav; sourceTree = "<group>"; };
 		D5A72A121CB72E89004E14A3 /* FMCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCollectionViewCell.swift; sourceTree = "<group>"; };
+		D5A72A141CB9C03B004E14A3 /* FMNumberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMNumberCollectionViewCell.swift; sourceTree = "<group>"; };
+		D5A72A191CB9F24E004E14A3 /* FMTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMTwoViewController.swift; sourceTree = "<group>"; };
+		D5A72A1B1CB9F701004E14A3 /* FMTwoMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMTwoMenuViewController.swift; sourceTree = "<group>"; };
+		D5A72A1D1CB9F7D5004E14A3 /* FMTwoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMTwoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D5AEBED91CAF082000F2C423 /* MiniGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5AEBEDC1CAF082000F2C423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5AEBEDE1CAF082000F2C423 /* GWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GWViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +130,16 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		D5A72A161CB9ECD4004E14A3 /* FlashMemory2 */ = {
+			isa = PBXGroup;
+			children = (
+				D5A72A191CB9F24E004E14A3 /* FMTwoViewController.swift */,
+				D5A72A1B1CB9F701004E14A3 /* FMTwoMenuViewController.swift */,
+				D5A72A1D1CB9F7D5004E14A3 /* FMTwoCollectionViewCell.swift */,
+			);
+			name = FlashMemory2;
+			sourceTree = "<group>";
+		};
 		D5AEBED01CAF082000F2C423 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +163,7 @@
 		D5AEBEDB1CAF082000F2C423 /* MiniGame */ = {
 			isa = PBXGroup;
 			children = (
+				D5A72A161CB9ECD4004E14A3 /* FlashMemory2 */,
 				D5A729FF1CB71BF7004E14A3 /* Sounds */,
 				D5AEBF211CB09ED500F2C423 /* FlashMemory */,
 				D5AEBF201CB09EC400F2C423 /* GuessWord */,
@@ -197,6 +216,7 @@
 				D5AEBF221CB09EFD00F2C423 /* FMViewController.swift */,
 				D5AEBF241CB09F5900F2C423 /* FMMenuViewController.swift */,
 				D5A72A121CB72E89004E14A3 /* FMCollectionViewCell.swift */,
+				D5A72A141CB9C03B004E14A3 /* FMNumberCollectionViewCell.swift */,
 			);
 			name = FlashMemory;
 			sourceTree = "<group>";
@@ -351,9 +371,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A72A151CB9C03B004E14A3 /* FMNumberCollectionViewCell.swift in Sources */,
 				D5AEBF231CB09EFE00F2C423 /* FMViewController.swift in Sources */,
 				D5AEBEDF1CAF082000F2C423 /* GWViewController.swift in Sources */,
+				D5A72A1C1CB9F701004E14A3 /* FMTwoMenuViewController.swift in Sources */,
+				D5A72A1E1CB9F7D5004E14A3 /* FMTwoCollectionViewCell.swift in Sources */,
 				D5AEBF111CAF48BF00F2C423 /* MenuViewController.swift in Sources */,
+				D5A72A1A1CB9F24E004E14A3 /* FMTwoViewController.swift in Sources */,
 				D5AEBF271CB0ADEA00F2C423 /* Questions.swift in Sources */,
 				D5A72A131CB72E89004E14A3 /* FMCollectionViewCell.swift in Sources */,
 				D5AEBF1F1CB0967B00F2C423 /* GameListViewController.swift in Sources */,
